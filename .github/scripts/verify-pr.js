@@ -8,7 +8,8 @@ const USER_MAP = {
   'hassancodeshub': 'Hassan_Shah',
   'kanishka-wani': 'Kanishka_Wani',
   'pranavpatil06': 'Pranav_Patil',
-  'yash11101': 'yash-patil'
+  'yash11101': 'yash-patil',
+  'saurabh-rajput-15': 'SAURABH_GIRASE'
 };
 
 const repoOwner = (process.env.REPO_OWNER || 'Soham156').toLowerCase();
@@ -198,7 +199,7 @@ if (!isAuthorized && isNewDirectory && prAuthor) {
   }
 }
 
-
+ 
 // Local / Testing bypass
 if (!prAuthor) {
   console.log('No PR_AUTHOR environment variable specified. Skipping ownership check (local run).');
