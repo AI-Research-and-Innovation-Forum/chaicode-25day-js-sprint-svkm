@@ -1,0 +1,31 @@
+name: PR Verification
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize, reopened]
+
+jobs:
+  verify:
+    name: Verify Folder Structure
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run PR Verification
+        env:
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_BRANCH: ${{ github.event.pull_request.head.ref }}
+          GITHUB_BASE_REF: ${{ github.base_ref }}
+          REPO_OWNER: ${{ github.repository_owner }}
+        run: node .github/scripts/verify-pr.js
