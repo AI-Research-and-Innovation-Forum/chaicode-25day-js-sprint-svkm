@@ -10,3 +10,9 @@ june 2 2026
 ## DAY-2  
 june 3 2026
 [DAY-2/README.md](DAY-2/README.md)
+## DAY-3
+june 4 2026
+[DAY-3/README.md](DAY-3/README.md)
+## DAY-4
+june 5 2026
+[DAY-4/README.md](DAY-4/README.md)
