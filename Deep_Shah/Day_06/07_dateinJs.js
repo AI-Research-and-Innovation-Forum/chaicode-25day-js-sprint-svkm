@@ -30,7 +30,8 @@ console.log(newDate);
 console.log(newDate.getMonth() + 1);
 console.log(newDate.getDay());
 
-// `${newDate.getDate()} and the time is ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}`
+// `${newDate.getDate()} and the time is 
+// ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}`
 
 newDate.toLocaleString('default', {
     weekday: "long",
