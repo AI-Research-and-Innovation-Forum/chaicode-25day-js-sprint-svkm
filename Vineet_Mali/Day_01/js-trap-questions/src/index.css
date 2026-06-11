@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", ui-sans-serif, sans-serif;
+  background: #111827;
+  color: #e5e7eb;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.paper-bg {
+  background:
+    radial-gradient(
+      circle at 20% 12%,
+      rgba(139, 92, 246, 0.2),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 88% 88%,
+      rgba(16, 185, 129, 0.14),
+      transparent 42%
+    ),
+    linear-gradient(135deg, #0f172a 0%, #111827 35%, #0b1220 100%);
+  position: relative;
+}
+
+.paper-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.14;
+  background-image:
+    linear-gradient(rgba(229, 231, 235, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(229, 231, 235, 0.18) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
