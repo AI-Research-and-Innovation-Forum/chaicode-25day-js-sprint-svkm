@@ -1,0 +1,19 @@
+CREATION PHASE
+--------------
+myVar   = undefined
+myLet   = <uninitialized>
+myConst = <uninitialized>
+
+EXECUTION PHASE
+---------------
+console.log(myVar)    -> undefined
+
+myVar = "I am var"
+
+console.log(myLet)    -> ReferenceError (TDZ)
+
+myLet = "I am let"
+
+console.log(myConst)  -> ReferenceError (TDZ)
+
+myConst = "I am const"

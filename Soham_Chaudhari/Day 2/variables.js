@@ -1,7 +1,3 @@
-console.log("Hello World");
-console.log("Starting my JavaScript journey");
-
-//vairables and Data Types
 const accountId = 144553;
 let accountEmail = "soham@example.com";
 var accountPassword = "12345";
