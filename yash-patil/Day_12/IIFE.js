@@ -13,6 +13,7 @@ const global_var="apple";
     console.log(global_var); //can access global variables in it.
     
 }
+
 )("yash");//good practice to have ; after IIFE
 
 ((name)=>{
