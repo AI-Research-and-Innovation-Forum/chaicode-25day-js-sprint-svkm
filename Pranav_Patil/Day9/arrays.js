@@ -77,6 +77,5 @@ let score3 = 300
 
 console.log(Array.of(score1,score2,score3)); // [100, 200, 300] : creates a new array instance with a variable number of arguments, regardless of the number or type of the arguments. It is similar to using the Array constructor with multiple arguments, but it does not have the special behavior when a single numeric argument is passed.
 
-
-
+console.log(Arrays);
 
