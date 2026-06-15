@@ -39,7 +39,7 @@ const chai = () => {                    //arrow function
 
 // chai()
 
-Explicit return 
+// Explicit return 
 const addTwo = (num1 , num2 ) => {
     return num1 + num2
 }
