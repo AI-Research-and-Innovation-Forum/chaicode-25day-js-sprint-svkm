@@ -4,8 +4,7 @@ switch (key) {
     case value:
         
         break;
-
-    default:
+      default:
         break;
 }
 
