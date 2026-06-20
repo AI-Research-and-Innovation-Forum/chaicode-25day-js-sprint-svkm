@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request Example</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <script>
+        // 1. Define the API URL (Fetching data for a GitHub user)
+        const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+        
+        // 2. Create a new XMLHttpRequest object
+        const xhr = new XMLHttpRequest();
+        
+        // 3. Open the request with the GET method and the URL
+        xhr.open('GET', requestUrl);
+        
+        // 4. Continuously track the state of the request
+        xhr.onreadystatechange = function() {
+            // Logs the state (0 to 4) as the request progresses
+            console.log(xhr.readyState); 
+            
+            // State 4 means the operation is complete and data has been received
+            if (xhr.readyState === 4) {
+                // The response comes as a string. We must parse it into a JSON object to access its properties.
+                const data = JSON.parse(this.responseText);
+                
+                // Verify the type is now an 'object'
+                console.log(typeof data);
+                
+                // Extract and print specific data (e.g., follower count)
+                console.log(data.followers);
+            }
+        }
+        
+        // 5. Finally, send the request to execute it
+        xhr.send();
+    </script>
+</body>
+</html>
+
