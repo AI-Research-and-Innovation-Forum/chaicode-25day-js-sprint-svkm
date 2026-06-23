@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+
+    <script>
+        // --- 1. DOM Traversal (Parent to Child) ---
+        const parent = document.querySelector('.parent');
+        console.log("Parent's Children (HTMLCollection):", parent.children); 
+        console.log("Second Child HTML:", parent.children[1].innerHTML); 
+
+        // Standard loop works on HTMLCollection
+        for (let i = 0; i < parent.children.length; i++) {
+            console.log("Day:", parent.children[i].innerHTML);
+        }
+
+        // Styling a specific child
+        parent.children[1].style.color = "orange";
+
+        // Accessing first and last child directly
+        console.log("First Element Child:", parent.firstElementChild);
+        console.log("Last Element Child:", parent.lastElementChild);
+
+        // --- 2. DOM Traversal (Child to Parent & Siblings) ---
+        const dayOne = document.querySelector('.day'); // Grabs the first '.day'
+        console.log("Parent Element:", dayOne.parentElement);
+        console.log("Next Sibling:", dayOne.nextElementSibling);
+
+        // Checking the full Node tree (includes text nodes like line breaks)
+        console.log("All Child NODES:", parent.childNodes);
+
+        // --- 3. Programmatically Creating New Elements ---
+        const div = document.createElement('div');
+        console.log("Newly created div:", div);
+
+        // Adding properties to the new element
+        div.className = "main";
+        div.id = Math.round(Math.random() * 10 + 1); // Generates a random ID 1-10
+        div.setAttribute("title", "generated title");
+
+        // Adding inline styles
+        div.style.backgroundColor = "green";
+        div.style.padding = "12px";
+
+        // Creating text content (Optimized approach compared to innerText)
+        const addText = document.createTextNode("Chai aur code");
+
+        // Appending the text to the div
+        div.appendChild(addText);
+
+        // Finally, attaching the fully constructed div to the actual Document Body
+        document.body.appendChild(div);
+    </script>
+</body>
+</html>

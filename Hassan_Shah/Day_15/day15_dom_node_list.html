@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+<body class="bg-black" style="background-color: #212121; color: #fff;">
+    
+    <div>
+        <h1 id="title" class="heading">DOM Learning on chai aur code <span style="display: none;">test text</span></h1>
+        <p>Lorem ipsum dolor sit amet...</p>
+        <input type="password">
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
+    </div>
+
+    <script>
+        // --- 1. getElementById & Attribute Manipulation ---
+        const title = document.getElementById('title');
+        console.log("ID:", title.id);
+        console.log("Class:", title.className); 
+        console.log("Get ID Attribute:", title.getAttribute('id'));
+        console.log("Get Class Attribute:", title.getAttribute('class'));
+
+        // Overwriting and setting attributes
+        title.setAttribute('class', 'test heading'); 
+
+        // Styling an element directly
+        title.style.backgroundColor = 'green';
+        title.style.padding = '15px';
+        title.style.borderRadius = '5px';
+
+        // Extracting different types of content
+        console.log("Text Content (All text):", title.textContent); 
+        console.log("Inner Text (Visible text):", title.innerText);   
+        console.log("Inner HTML (Text + HTML Tags):", title.innerHTML);   
+
+        // --- 2. querySelector (Selects the first match) ---
+        console.log(document.querySelector('h1'));
+        console.log(document.querySelector('#title'));
+        console.log(document.querySelector('.heading'));
+        console.log(document.querySelector('input[type="password"]'));
+
+        // Running querySelector on a specific element (instead of document)
+        const myul = document.querySelector('ul');
+        const turnGreen = myul.querySelector('li');
+        turnGreen.style.backgroundColor = "green";
+        turnGreen.style.padding = "10px";
+        turnGreen.innerText = "5";
+
+        // --- 3. querySelectorAll (Returns a NodeList) ---
+        const tempLiList = document.querySelectorAll('li');
+
+        // NodeLists can be accessed via index
+        tempLiList[0].style.color = 'green'; 
+
+        // NodeLists have a built-in forEach loop
+        tempLiList.forEach(function (l) {
+            l.style.backgroundColor = 'green';
+        });
+
+        // --- 4. getElementsByClassName (Returns an HTMLCollection) ---
+        const tempClassList = document.getElementsByClassName('list-item');
+
+        // HTMLCollections lack array methods like forEach, so we convert it first
+        const myConvertedArray = Array.from(tempClassList);
+        myConvertedArray.forEach(function (li) {
+            li.style.color = 'orange';
+        });
+    </script>
+</body>
+</html>
