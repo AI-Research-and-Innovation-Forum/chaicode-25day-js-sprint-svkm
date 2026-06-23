@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;color: #fff;">
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(function(){ //will work after given time
+    //     console.log("yash");
+        
+    // },2000)
+    // setInterval(function(){  
+    // // will repetedly work in time gap of given time
+    //     console.log("yash");
+        
+    // },2000)
+    const sayYash=function(){
+        console.log("Yash");
+        
+    }
+    const changeH1=function()
+    {
+        const h1=document.querySelector("h1")
+        h1.innerText="Best JS series"
+    }
+    // setTimeout(sayYash,2000)
+    
+    const changeMe=setTimeout(changeH1,2000)
+
+    document.querySelector("#stop").addEventListener("click",function(){
+        clearTimeout(changeMe)
+        console.log("STOPPED");
+        
+    })
+    
+
+</script>
+</html>
